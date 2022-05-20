@@ -24,7 +24,7 @@
 <meta property="og:description" content="docker 用的太水了  要学习一波怎么骚操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-28T03:40:19.000Z">
-<meta property="article:modified_time" content="2022-03-08T06:02:05.200Z">
+<meta property="article:modified_time" content="2022-05-20T18:12:53.218Z">
 <meta property="article:author" content="Afreto">
 <meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary_large_image">
@@ -630,6 +630,8 @@
 <li><code>-f</code> 指定 Dockfile 路径</li>
 <li><code>-t</code> 指定生成镜像的标签信息</li>
 </ul>
+<p>配置代理</p>
+<p><code>docker build . --build-arg &quot;HTTP_PROXY=http://127.0.0.1:1087/&quot; --build-arg &quot;HTTPS_PROXY=http://127.0.0.1:1087/&quot;  --network host -t smtp:1</code></p>
 
               
             </div>
