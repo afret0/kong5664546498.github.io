@@ -16,16 +16,16 @@
   <meta name="author" content="Afreto">
   <meta name="keywords" content="">
   
-    <meta name="description" content="批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \;">
+    <meta name="description" content="批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \; 合并音视频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -stri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ffmpeg">
 <meta property="og:url" content="http://example.com/2022/05/27/ffmpeg/index.html">
 <meta property="og:site_name" content="Afreto&#39;s blog">
-<meta property="og:description" content="批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \;">
+<meta property="og:description" content="批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \; 合并音视频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -stri">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Afret1/image/master/img/202205272350347.png">
 <meta property="article:published_time" content="2022-05-27T15:48:48.000Z">
-<meta property="article:modified_time" content="2022-05-27T15:50:17.393Z">
+<meta property="article:modified_time" content="2023-04-07T10:01:06.808Z">
 <meta property="article:author" content="Afreto">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Afret1/image/master/img/202205272350347.png">
@@ -242,6 +242,10 @@
             <div class="markdown-body">
               
               <h1 id="批量转换视频格式"><a href="#批量转换视频格式" class="headerlink" title="批量转换视频格式"></a>批量转换视频格式</h1><p><code>find ./ -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&#123;0%%.mov&#125;.mp4&quot;&#39; &#123;&#125; \;</code></p>
+<h1 id="合并音视频"><a href="#合并音视频" class="headerlink" title="合并音视频"></a>合并音视频</h1><p><code>ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4</code></p>
+<p>video.mp4,audio.wav 分别是要合并的视频和音频，output.mp4 是合并后输出的音视频文件.</p>
+<h1 id="替换音频"><a href="#替换音频" class="headerlink" title="替换音频"></a>替换音频</h1><p><code>ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental -map 0:v:0 -map 1:a:0 output.mp4</code></p>
+<p>用 audio 音频替换 video 中的音频</p>
 
               
             </div>

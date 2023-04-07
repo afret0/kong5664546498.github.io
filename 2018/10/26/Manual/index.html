@@ -24,7 +24,7 @@
 <meta property="og:description" content="常用的东西 每次都要 google 好麻烦 记个笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-26T08:08:44.000Z">
-<meta property="article:modified_time" content="2022-03-08T06:59:38.275Z">
+<meta property="article:modified_time" content="2023-04-07T10:01:06.807Z">
 <meta property="article:author" content="Afreto">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary_large_image">
@@ -272,13 +272,11 @@
 <h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><h2 id="电源管理中没有休眠选项"><a href="#电源管理中没有休眠选项" class="headerlink" title="电源管理中没有休眠选项"></a>电源管理中没有休眠选项</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">powercfg <span class="hljs-literal">-h</span> off<br>powercfg hibernate size <span class="hljs-number">40</span><br>Powercfg <span class="hljs-literal">-h</span> on<br></code></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-power/new-surface/2bc0382c-0ad9-457e-8adc-8d24df60c94d">windows community solution</a></p>
+<h2 id="powershell-代理设置"><a href="#powershell-代理设置" class="headerlink" title="powershell 代理设置"></a>powershell 代理设置</h2><p><code>$Env:http_proxy=&quot;http://127.0.0.1:1087&quot;;$Env:https_proxy=&quot;http://127.0.0.1:1087&quot;</code></p>
 <h2 id="scoop"><a href="#scoop" class="headerlink" title="scoop"></a>scoop</h2><p><code>iwr -useb get.scoop.sh | iex</code></p>
 <p>Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with</p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">Set</span>-ExecutionPolicy <span class="hljs-comment">RemoteSigned -scope CurrentUser</span><br></code></pre></td></tr></table></figure>
 
-<blockquote>
-<p> raw.githubusercontent.com 访问不到修改 hosts <code>C:/windows/system32/drivers/etc/hosts</code><br>199.232.68.133 raw.githubusercontent.com</p>
-</blockquote>
 <p>关闭 aria2</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop config aria2<span class="hljs-literal">-enabled</span> false  <br></code></pre></td></tr></table></figure>
 
@@ -294,12 +292,7 @@
 <p>添加常用的 bucket</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop bucket add extras;<br>scoop bucket add Java;<br>scoop bucket add versions;<br>scoop bucket add Ash258 <span class="hljs-string">&#x27;https://github.com/Ash258/Scoop-Ash258.git&#x27;</span><br>scoop bucket add dorado https://github.com/h404bi/dorado<br>scoop bucket add iszy https://github.com/ZvonimirSun/scoop<span class="hljs-literal">-iszy</span><br>scoop bucket add dodorz https://github.com/dodorz/scoop<span class="hljs-literal">-bucket</span><br>scoop bucket add rasa https://github.com/rasa/scoops<br>scoop bucket add scoopet https://github.com/integzz/scoopet<br>scoop bucket add raresoft https://github.com/L<span class="hljs-literal">-Trump</span>/scoop<span class="hljs-literal">-raresoft</span><br></code></pre></td></tr></table></figure>
 
-
-
-
-
-<h2 id="chocolate"><a href="#chocolate" class="headerlink" title="chocolate"></a>chocolate</h2><p>设置代理</p>
-<p><code>choco  config set proxy  &#39;http://127.0.0.1:1080&#39;</code></p>
+<h1 id="WSA"><a href="#WSA" class="headerlink" title="WSA"></a>WSA</h1><h2 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h2><p>浏览器打开 <code>wsa://com.android.settings</code></p>
 
               
             </div>

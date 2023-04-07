@@ -306,7 +306,7 @@
       <a class="index-excerpt" href="/2022/05/27/ffmpeg/" target="_self">
         <div>
           
-          批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \;
+          批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \; 合并音视频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -stri
         </div>
       </a>
 
