@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/Afret1/image/master/img/202205201554336.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Afreto">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Afreto&#39;s blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Afreto&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Afreto">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Afreto&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Afreto~</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                
+                由我自横
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                不求甚解
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/cave">
+                
+                四时风物
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                
+                风之甬道
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                星火满天
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/Afret1/image/master/img/202204051301766.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="歇于雁荡山大龙湫,及三更梦中,星火满天,喜不成寐,赤足跳入草莽中~"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/03/12/tmux-handbook/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204251820079.png" srcset="/img/loading.gif" lazyload alt="tmux_handbook">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/03/12/tmux-handbook/" target="_self">
+          tmux_handbook
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/03/12/tmux-handbook/" target="_self">
+        <div>
+          
+          在 Tmux 中，按下 Tmux 前缀 ctrl+b，然后：会话123:new&lt;回车&gt;  启动新会话s           列出所有会话$           重命名当前会话  窗口 (标签页)1234567c  创建新窗口w  列出所有窗口n  后一个窗口p  前一个窗口f  查找窗口,  重命名当前窗口&amp;  关闭当前窗口  调整窗口排序123swap-window -s 3
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-12 13:33" pubdate>
+              2022-03-12
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/03/12/%E6%A2%A6%E6%B8%B8%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%AB/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204251830417.png" srcset="/img/loading.gif" lazyload alt="梦游天姥吟留别">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/03/12/%E6%A2%A6%E6%B8%B8%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%AB/" target="_self">
+          梦游天姥吟留别
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/03/12/%E6%A2%A6%E6%B8%B8%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%AB/" target="_self">
+        <div>
+          
+          梦游天姥吟留别李白 〔唐代〕 海客谈瀛洲，烟涛微茫信难求；越人语天姥，云霞明灭或可睹。天姥连天向天横，势拔五岳掩赤城。天台四万八千丈，对此欲倒东南倾。(四万 一作：一万) 我欲因之梦吴越，一夜飞度镜湖月。湖月照我影，送我至剡溪。谢公宿处今尚在，渌水荡漾清猿啼。脚著谢公屐，身登青云梯。半壁见海日，空中闻天鸡。千岩万转路不定，迷花倚石忽已暝。熊咆龙吟殷岩泉，栗深林兮惊层巅。云青青兮欲雨，水澹澹兮生烟。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-12 01:29" pubdate>
+              2022-03-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/cave/">#cave</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/03/09/RSS%E4%B9%8B%E8%B7%AF/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204071215454.png" srcset="/img/loading.gif" lazyload alt="RSS之路">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/03/09/RSS%E4%B9%8B%E8%B7%AF/" target="_self">
+          RSS之路
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/03/09/RSS%E4%B9%8B%E8%B7%AF/" target="_self">
+        <div>
+          
+          终于走上了自建 RSS 之路 为什么 RSS拒绝算法, 还我时间线.  b 站老用户的我, 有一天看视频发现它跟抖音越来越一致了. 我看了眼美女视频, 然后整个下午我看到的视频全都是美女. 当然我是爱看美女的. 但是这个事情让我意识到算法对我的绑架. 咨询聚合. 这是我回到 RSS 的另一个需求.  常刷 b 站, 没事儿煎蛋, 偶尔也去微博看看几个关注的人. 还有 twitter 和 YouTu
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-09 12:32" pubdate>
+              2022-03-09
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/RSS/">#RSS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/05/25/%E4%BA%BA%E7%B1%BB%E7%BB%88%E5%B0%86%E4%B8%80%E8%B4%A5%E6%B6%82%E5%9C%B0/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204251832356.png" srcset="/img/loading.gif" lazyload alt="人类终将一败涂地~">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/05/25/%E4%BA%BA%E7%B1%BB%E7%BB%88%E5%B0%86%E4%B8%80%E8%B4%A5%E6%B6%82%E5%9C%B0/" target="_self">
+          人类终将一败涂地~
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2021/05/25/%E4%BA%BA%E7%B1%BB%E7%BB%88%E5%B0%86%E4%B8%80%E8%B4%A5%E6%B6%82%E5%9C%B0/" target="_self">
+        <div>
+          
+          人类终将一败涂地… 2020 年 2 月 6 日 李文亮医生 逝世2019 年 12 月下旬，來自疫情暴發地武漢的眼科醫生李文亮在社群媒體上警告朋友，他所在的醫院遇到一種神秘的新病毒，結果被當地警方以散布謠言為由訓誡  2021年02月03日 人人字幕组下线 2021年05月22日  袁隆平逝世 大德鲁伊走好~ “杂交水稻之父”、中国工程院院士、“共和国勋章” 获得者袁隆平，5 月 22 日 13
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-05-25 14:13" pubdate>
+              2021-05-25
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/cave/">#cave</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/01/07/%E6%B2%88%E9%98%B3%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E5%96%9C%E6%AC%A2%E5%90%83%E7%83%A4%E9%B8%A1%E6%9E%B6/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204051317555.png" srcset="/img/loading.gif" lazyload alt="沈阳人为什么爱烤鸡架">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/07/%E6%B2%88%E9%98%B3%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E5%96%9C%E6%AC%A2%E5%90%83%E7%83%A4%E9%B8%A1%E6%9E%B6/" target="_self">
+          沈阳人为什么爱烤鸡架
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2021/01/07/%E6%B2%88%E9%98%B3%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E5%96%9C%E6%AC%A2%E5%90%83%E7%83%A4%E9%B8%A1%E6%9E%B6/" target="_self">
+        <div>
+          
+          Clipped from: https:&#x2F;&#x2F;daily.zhihu.com&#x2F;story&#x2F;9726632  一 早年间，沈阳的产业工人娱乐方式较少，喝酒聊天是大多数人消磨时光的首选。既然是以聊天为主，下酒的配菜自然不宜饱腹胀肚。也因此，肉少、油大、有滋味且价格实惠的鸡架，深得沈阳人的心。 沈阳，鸡架之城。 几乎每座城市，都有自己的隐秘美食。这道美食，或许不甚精致，又或者不被外人所知，但却是当地
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-07 13:53" pubdate>
+              2021-01-07
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/cave/">#cave</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/27/Mysql%20%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%90%E8%A1%8C%E7%9A%84/" target="_self">
+          Mysql 是怎样运行的
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2020/12/27/Mysql%20%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%90%E8%A1%8C%E7%9A%84/" target="_self">
+        <div>
+          
+          初识服务器处理客户端请求大致需要经过三个部分，分别是连接管理、解析与优化、存储引擎。  客户端可以采用TCP&#x2F;IP、命名管道或共享内存、Unix域套接字等方式与服务器建立通信 每当有一个客户端进程连接到服务器进程时，服务器进程都会创建一个线程来专门处理与这个客户端的交互，当该客户端退出时会与服务器断开连接，服务器并不会立即把与该客户端交互的线程销毁掉，而是把它缓存起来，在另一个新的客户端再进行
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-27 15:19" pubdate>
+              2020-12-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/note/">#note</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/14/%E4%B8%80%E9%94%AEzsh/" target="_self">
+          一键zsh
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2020/08/14/%E4%B8%80%E9%94%AEzsh/" target="_self">
+        <div>
+          
+          一键安装 zsh 并配置 oh-my-zsh, 下载插件
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-14 17:11" pubdate>
+              2020-08-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/shell/">#shell</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/07/v2ray-%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" target="_self">
+          v2ray 搭建记录
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2020/08/07/v2ray-%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" target="_self">
+        <div>
+          
+          证书过期了,就顺手升级一下 caddy2. caddy 升级后直接使用官方 image, 增加了个小脚本自动拉取配置,真香~
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-07 18:16" pubdate>
+              2020-08-07
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/v2ray/">#v2ray</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/07/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_self">
+          数据结构和算法笔记
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2020/07/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_self">
+        <div>
+          
+          o_O’’
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-21 14:44" pubdate>
+              2020-07-21
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/note/">#note</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/05/07/prometheus-exporter-python/" target="_self">
+          prometheus exporter(python)
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2020/05/07/prometheus-exporter-python/" target="_self">
+        <div>
+          
+          不上监控你永远不知道线上代码跑成什么样, 不生孩子你就不知道肿么回事儿
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-07 16:50" pubdate>
+              2020-05-07
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/prometheus/">#prometheus</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      遇事不决,可问春风~
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

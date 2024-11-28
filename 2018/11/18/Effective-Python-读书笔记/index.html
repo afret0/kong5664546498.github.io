@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/Afret1/image/master/img/202205201554336.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Afreto">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1import this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Python 读书笔记">
+<meta property="og:url" content="http://example.com/2018/11/18/Effective-Python-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Afreto&#39;s blog">
+<meta property="og:description" content="1import this">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-18T13:37:24.000Z">
+<meta property="article:modified_time" content="2024-11-28T10:54:25.375Z">
+<meta property="article:author" content="Afreto">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Effective Python 读书笔记 - Afreto&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Afreto~</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                
+                由我自横
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                不求甚解
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/cave">
+                
+                四时风物
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                
+                风之甬道
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                星火满天
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/Afret1/image/master/img/202204051313924.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Effective Python 读书笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Effective Python 读书笔记</h1>
+            
+            <div class="markdown-body">
+              
+              <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> this<br></code></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="用-Python-的方式思考"><a href="#用-Python-的方式思考" class="headerlink" title="用 Python 的方式思考"></a>用 Python 的方式思考</h1><h2 id="bytes-str-和-unicode"><a href="#bytes-str-和-unicode" class="headerlink" title="bytes str 和 unicode"></a>bytes str 和 unicode</h2><p>接受 str 或 bytes 返回 str 的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_str</span>(<span class="hljs-params">bytes_or_str</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(bytes_or_str, <span class="hljs-built_in">bytes</span>):<br>        value = bytes_or_str.decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        value = bytes_or_str<br>    <span class="hljs-keyword">return</span> value<br></code></pre></td></tr></table></figure>
+<p>接受 str 或 bytes 返回 bytes 的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_bytes</span>(<span class="hljs-params">bytes_or_str</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(bytes_or_str, <span class="hljs-built_in">str</span>):<br>        value = bytes_or_str.encode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        value = bytes_or_str<br>    <span class="hljs-keyword">return</span> value<br></code></pre></td></tr></table></figure>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>如果从序列的开头获取切片,那就不要在 start 那里写上 0 ,而是应该把它留空,这样代码看起来会清爽一些.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">assert</span> s[:<span class="hljs-number">5</span>] == s[<span class="hljs-number">0</span>:<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+<p>如果切片一直要取到列表末尾,那就应该把 end 留空,因为即使写了,也是多余.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">assert</span> s[<span class="hljs-number">5</span>:] == s[<span class="hljs-number">5</span>:<span class="hljs-built_in">len</span>(s)]<br></code></pre></td></tr></table></figure>
+<p>切割列表时,如果指定了 stride,那么代码可能会变得相当费解.我们呢不应该把 stride 与 start 和 end 写在一起.如果非要用,那就尽量采用正值.同时省略 start 和 end 索引.如果一定要配合 start 或 end 索引来使用 stride,请考虑步进式切片,把切割结果赋给某个变量,然后二次切片.</p>
+<h2 id="尽量用-enumerate-取代-range"><a href="#尽量用-enumerate-取代-range" class="headerlink" title="尽量用 enumerate 取代 range"></a>尽量用 <code>enumerate</code> 取代 <code>range</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i, flavor <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(flavor_list, <span class="hljs-number">1</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;&#125; : &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(i, flavor))<br></code></pre></td></tr></table></figure>
+<h2 id="用-zip-遍历两个列表"><a href="#用-zip-遍历两个列表" class="headerlink" title="用 zip() 遍历两个列表"></a>用 <code>zip()</code> 遍历两个列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">names = [<span class="hljs-string">&#x27;tom&#x27;</span>, <span class="hljs-string">&#x27;anny&#x27;</span>, <span class="hljs-string">&#x27;jake&#x27;</span>]<br>letters = [<span class="hljs-built_in">len</span>(n) <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> names]<br><span class="hljs-keyword">for</span> name, count <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(names, letters):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;&#125; : &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name, count))<br></code></pre></td></tr></table></figure>
+<p><strong>如果输入的迭代器长度不同, 受封装的那些迭代器中,只要有一个耗尽了,<code>zip</code> 就不再产生新的元组了</strong></p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="尽量用异常来表示特殊情况-而不要返回-None"><a href="#尽量用异常来表示特殊情况-而不要返回-None" class="headerlink" title="尽量用异常来表示特殊情况,而不要返回 None"></a>尽量用异常来表示特殊情况,而不要返回 <code>None</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">divide</span>(<span class="hljs-params">a, b</span>):<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">return</span> a / b<br>    <span class="hljs-keyword">except</span> ZeroDivisionError <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&#x27;Invlid inputs&#x27;</span>) <span class="hljs-keyword">from</span> e<br></code></pre></td></tr></table></figure>
+<h1 id="类与继承"><a href="#类与继承" class="headerlink" title="类与继承"></a>类与继承</h1><h2 id="尽量用辅助类来维护程序的状态-而不要用字典和元组"><a href="#尽量用辅助类来维护程序的状态-而不要用字典和元组" class="headerlink" title="尽量用辅助类来维护程序的状态, 而不要用字典和元组"></a>尽量用辅助类来维护程序的状态, 而不要用字典和元组</h2><p>很容易就能用 Python 内置的字典与元组类型构建出分层的数据结构, 从而保存程序的内部状态. 但是, 当嵌套多于一层的时候, 就应该避免这种做法(<strong>不要使用包含字典的字典</strong>), 这种多层嵌套的代码, 其他人很难看懂, 而且自己维护起来也很麻烦.</p>
+<p>用来保存程序状态的数据结构一旦变得过于复杂, 就应该将其拆解为类, 以便提供更为明确的接口, 也能够在接口与具体实现之间创建抽象层.  </p>
+<h3 id="把嵌套结构重构为类"><a href="#把嵌套结构重构为类" class="headerlink" title="把嵌套结构重构为类"></a>把嵌套结构重构为类</h3><p><code>collections</code> 模块着的 <code>namedtuple</code>(<strong>具名元组</strong>)类型非常适合这种需求, 使用它很容易定义出精简而又不可变的数据类.<br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> collections<br><br>Grade = collections.namedtuple(<span class="hljs-string">&#x27;Grade&#x27;</span>, (<span class="hljs-string">&#x27;score&#x27;</span>, <span class="hljs-string">&#x27;weight&#x27;</span>))<br><br><br><span class="hljs-comment"># 科目类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Subject</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        self._grades = []<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">report_grade</span>(<span class="hljs-params">self, score, weight</span>):<br>        self._grades.append(Grade(score, weight))<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">average_grade</span>(<span class="hljs-params">self</span>):<br>        total, total_weight = <span class="hljs-number">0</span>, <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> grade <span class="hljs-keyword">in</span> self._grades:<br>            total += grade.score * grade.weight<br>            total_weight += grade.weight<br>        <span class="hljs-keyword">return</span> total / total_weight<br><br><br><span class="hljs-comment"># 学生类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        self._subjects = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-keyword">if</span> name <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self._subjects:<br>            self._subjects[name] = Subject()<br>        <span class="hljs-keyword">return</span> self._subjects[name]<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">average_grade</span>(<span class="hljs-params">self</span>):<br>        total, count = <span class="hljs-number">0</span>, <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> subject <span class="hljs-keyword">in</span> self._subjects.values():<br>            total += subject.average_grade()<br>            count += <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> total / count<br><br><br><span class="hljs-comment"># 考试成绩容器类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Gradebook</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        self._students = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">student</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-keyword">if</span> name <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self._students:<br>            self._students[name] = Student()<br>        <span class="hljs-keyword">return</span> self._students[name]<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    book = Gradebook()<br>    albert = book.student(<span class="hljs-string">&#x27;Albert Einstein&#x27;</span>)<br>    math = albert.subject(<span class="hljs-string">&#x27;Math&#x27;</span>)<br>    math.report_grade(<span class="hljs-number">80</span>, <span class="hljs-number">0.10</span>)<br>    <span class="hljs-built_in">print</span>(albert.average_grade())<br></code></pre></td></tr></table></figure>
+<p><em>要点</em></p>
+<ul>
+<li>不要使用包含其它字典的字典, 也不要使用过长的元组</li>
+<li>如果容器中包含间的而又不可变的数据, 那么可以先使用 <code>nametuple</code> 来表示, 再修改为完整的类</li>
+<li>保存内部状态的字典如果变得比较复杂, 那就应该把这些代码拆解为多个辅助类.<h2 id="只在使用-Mix-in-组件制作工具类时进行多重继承"><a href="#只在使用-Mix-in-组件制作工具类时进行多重继承" class="headerlink" title="只在使用 Mix-in 组件制作工具类时进行多重继承"></a>只在使用 <code>Mix-in</code> 组件制作工具类时进行多重继承</h2><blockquote>
+<p>待续</p>
+</blockquote>
+<h2 id="多用-public-属性-少用-private-属性"><a href="#多用-public-属性-少用-private-属性" class="headerlink" title="多用 public 属性, 少用 private 属性"></a>多用 public 属性, 少用 private 属性</h2><h1 id="元类及属性"><a href="#元类及属性" class="headerlink" title="元类及属性"></a>元类及属性</h1><h2 id="用纯属性取代-get-和-set-方法"><a href="#用纯属性取代-get-和-set-方法" class="headerlink" title="用纯属性取代 get 和 set 方法"></a>用纯属性取代 <code>get</code> 和 <code>set</code> 方法</h2><p>使用 <code>@property</code> 装饰器在设置属性的时候实现特殊行为.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Resistor</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, ohms</span>):<br>        self.ohms = ohms<br>        self.voltage = <span class="hljs-number">0</span><br>        self.current = <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p>下面这个子类继承自 Resistor, 它在给 voltage(<em>电压</em>)属性赋值的时候,还会同时修改 current(<em>电流</em>)属性.</p>
+<blockquote>
+<p><code>setter</code> 和 <code>getter</code> 方法的名称必须与相关属性相符.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">VoltageResistance</span>(<span class="hljs-title class_ inherited__">Resistor</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, ohms</span>):<br>        <span class="hljs-built_in">super</span>().__init__(ohms)<br>        self._voltage = <span class="hljs-number">0</span><br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">voltage</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> self._voltage<br><br><span class="hljs-meta">    @voltage.setter</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">voltage</span>(<span class="hljs-params">self, voltage</span>):<br>        self._voltage = voltage<br>        self.current = self._voltage / self.ohms<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    r2 = VoltageResistance(<span class="hljs-number">3</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Before: &#123;&#125; amps&#x27;</span>.<span class="hljs-built_in">format</span>(r2.current))<br>    r2.voltage = <span class="hljs-number">10</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;after: &#123;&#125; amps&#x27;</span>.<span class="hljs-built_in">format</span>(r2.curren<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Before</span>: <span class="hljs-number">0</span> amps<br><span class="hljs-attribute">after</span>: <span class="hljs-number">3</span>.<span class="hljs-number">3333333333333335</span> amps<br></code></pre></td></tr></table></figure>
+<h2 id="用-property-来代替属性重构"><a href="#用-property-来代替属性重构" class="headerlink" title="用 @property 来代替属性重构"></a>用 <code>@property</code> 来代替属性重构</h2><p>带有配额的漏桶.<br><em>代码略</em></p>
+<blockquote>
+<p>漏桶算法是一种具备传输, 调度和统计等用途的算法. 它把容器比作底部有漏洞的桶(<em>leakybucket</em>), 把配额(<em>quota</em>)比作桶底漏出的水.</p>
+</blockquote>
+<h2 id="用描述符来改写需要复用的-property-方法"><a href="#用描述符来改写需要复用的-property-方法" class="headerlink" title="用描述符来改写需要复用的 @property 方法"></a>用描述符来改写需要复用的 <code>@property</code> 方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Grade</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__get__</span>(<span class="hljs-params">*args, **kwargs</span>):<br>        <span class="hljs-comment">#...</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__set__</span>(<span class="hljs-params">*args, **kwargs</span>):<br>        <span class="hljs-comment"># ...</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Exam</span>():<br>    <span class="hljs-comment">#class attributes</span><br>    math_grade = Grade()<br>    writing_grade = Grade()<br>    science_grade = Grade()<br>    <br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    exam = Exam()<br>    exam.writing_grade = <span class="hljs-number">40</span><br></code></pre></td></tr></table></figure>
+<p>为属性赋值时, Python 会将其转译:<br><br><code>Exam.__dict__[&#39;writing_grade&#39;].__set__(exam, 40)</code><br><br>在获取属性时<br><code>print(exam.writing_grade)</code><br>Python 也会将其转译<br><code>print(Exam.__dict__[&#39;writing_grade&#39;].__get__(exam, Exam))</code></p>
+<h2 id="用-getattr-getattribute-和-setattr-实现按需生成的属性"><a href="#用-getattr-getattribute-和-setattr-实现按需生成的属性" class="headerlink" title="用 __getattr__ __getattribute__ 和 __setattr__ 实现按需生成的属性"></a>用 <code>__getattr__ __getattribute__ 和 __setattr__</code> 实现按需生成的属性</h2><h3 id="getattr"><a href="#getattr" class="headerlink" title="__getattr__"></a><code>__getattr__</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LazyDB</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        self.exists = <span class="hljs-number">5</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getattr__</span>(<span class="hljs-params">self, name</span>):<br>        value = <span class="hljs-string">&#x27;value for &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name)<br>        <span class="hljs-built_in">setattr</span>(self, name, value)<br>        <span class="hljs-keyword">return</span> value<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    data = LazyDB()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;before: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.__dict__))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.foo))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;after: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.__dict__))<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">before</span>: &#123;<span class="hljs-string">&#x27;exists&#x27;</span>: <span class="hljs-number">5</span>&#125;<br>foo: <span class="hljs-keyword">value</span> <span class="hljs-keyword">for</span> foo<br><span class="hljs-keyword">after</span>: &#123;<span class="hljs-string">&#x27;exists&#x27;</span>: <span class="hljs-number">5</span>, <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;value for foo&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后给 LazyDB 添加记录功能, 把程序对 <code>__getattr__</code> 的调用行为记录下来. 为了避免无限递归, 需要在 LoggingLazyDB 子类里面通过 <code>super().__getattr__()</code> 来获取真正的属性值.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LoggingLazyDB</span>(<span class="hljs-title class_ inherited__">LazyDB</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getattr__</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Called __getattr__&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name))<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>().__getattr__(name)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    data = LoggingLazyDB()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;exists:  &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.exists))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.foo))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.foo))<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pyton">exists:  5<br>Called __getattr__foo<br>foo: value for foo<br>foo: value for foo<br></code></pre></td></tr></table></figure>
+<p>因为 exists 属性本身就在实例字典里面, 所以访问它的时候不会触发 <code>__getattr__</code>. foo 属性初始时并不在实例字典里, 所以初次访问的时候会触发 <code>__getattr__</code>. <code>__getattr__</code> 调用 <code>setattr</code> 方法, 把 foo 放在实例字典中, 所以第二次访问 foo 的时候不会触发 <code>__getattr__</code>.</p>
+<h3 id="getattribute"><a href="#getattribute" class="headerlink" title="__getattribute__"></a><code>__getattribute__</code></h3><p>程序每次访问对象的属性时, Python 会调用这个特殊方法, 即使属性字典里面已经有了该属性, 也依然会触发 <code>__getattribute__</code> 方法.<br><br>ValidatingDB 会在 <code>__getattribute__</code> 方法里面记录每次调用的时间.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ValidatingDB</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        self.exists = <span class="hljs-number">5</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getattribute__</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Called __getattrbute__ &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name))<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>().__getattribute__(name)<br>        <span class="hljs-keyword">except</span> AttributeError:<br>            value = <span class="hljs-string">&#x27;value for &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name)<br>            <span class="hljs-built_in">setattr</span>(self, name, value)<br>            <span class="hljs-keyword">return</span> value<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    data = ValidatingDB()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;exists:  &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.exists))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.foo))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo: &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.foo))<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">Called __getattrbute__ exists<br>exists:  <span class="hljs-number">5</span><br>Called __getattrbute__ foo<br>foo: value <span class="hljs-keyword">for</span> foo<br>Called __getattrbute__ foo<br>foo: value <span class="hljs-keyword">for</span> foo<br></code></pre></td></tr></table></figure>
+<p>按照 Python 处理缺失属性的标准流程, 如果程序动态地访问了一个不应该有的属性, 可以在 <code>__getattr__</code> 和 <code>__getattrbute__</code> 里面抛出 AttributeError 异常.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MissingPropertyDB</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getattr__</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-keyword">if</span> name == <span class="hljs-string">&#x27;bad_name&#x27;</span>:<br>            <span class="hljs-keyword">raise</span> AttributeError(<span class="hljs-string">&#x27;&#123;&#125; is missing&#x27;</span>.<span class="hljs-built_in">format</span>(name))<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    data = MissingPropertyDB()<br>    data.bad_name<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">Traceback (most recent <span class="hljs-keyword">call</span> last):<br>  File &quot;C:/Users/wter/OneDrive/pythonpj/half_a_wheel/half/test.py&quot;, <span class="hljs-type">line</span> <span class="hljs-number">54</span>, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    data.bad_name<br>  File &quot;C:/Users/wter/OneDrive/pythonpj/half_a_wheel/half/test.py&quot;, <span class="hljs-type">line</span> <span class="hljs-number">49</span>, <span class="hljs-keyword">in</span> __getattr__<br>    <span class="hljs-keyword">raise</span> AttributeError(<span class="hljs-string">&#x27;&#123;&#125; is missing&#x27;</span>.format(<span class="hljs-type">name</span>))<br>AttributeError: bad_name <span class="hljs-keyword">is</span> missing<br></code></pre></td></tr></table></figure>
+<p>实现通用的功能时, 会在 Python 中使用内置的 hasattr 函数来判断对象是否已经拥有了相关的属性, 并用内置的 getattr 函数来获取属性值. 这些函数会在实例字典中搜索待查询的属性,然后再调用 <code>__getattr__</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">data = LoggingLazyDB()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;before:  &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.__dict__))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo exists:  &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">hasattr</span>(data, <span class="hljs-string">&#x27;foo&#x27;</span>)))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;after:   &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data.__dict__))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;foo exists:  &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">hasattr</span>(data, <span class="hljs-string">&#x27;foo&#x27;</span>)))<br></code></pre></td></tr></table></figure>
+<p><code>&gt;&gt;&gt;</code></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">before</span>:  &#123;<span class="hljs-string">&#x27;exists&#x27;</span>: <span class="hljs-number">5</span>&#125;<br><span class="hljs-keyword">Called</span> __getattr__foo<br>foo <span class="hljs-keyword">exists</span>:  <span class="hljs-keyword">True</span><br><span class="hljs-keyword">after</span>:   &#123;<span class="hljs-string">&#x27;exists&#x27;</span>: <span class="hljs-number">5</span>, <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;value for foo&#x27;</span>&#125;<br>foo <span class="hljs-keyword">exists</span>:  <span class="hljs-keyword">True</span><br></code></pre></td></tr></table></figure>
+<h2 id="用元类验证子类"><a href="#用元类验证子类" class="headerlink" title="用元类验证子类"></a>用元类验证子类</h2><p><em>内容赞略</em></p>
+<h2 id="用元类来注册子类"><a href="#用元类来注册子类" class="headerlink" title="用元类来注册子类"></a>用元类来注册子类</h2><p><em>内容赞略</em></p>
+<h2 id="用元类来注解类的属性"><a href="#用元类来注解类的属性" class="headerlink" title="用元类来注解类的属性"></a>用元类来注解类的属性</h2><p><em>内容赞略</em></p>
+<h1 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h1><h2 id="用-subprocess-模块来管理子进程"><a href="#用-subprocess-模块来管理子进程" class="headerlink" title="用 subprocess 模块来管理子进程"></a>用 <code>subprocess</code> 模块来管理子进程</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">run_sleep</span>(<span class="hljs-params">period</span>):<br>    proc = subprocess.Popen([<span class="hljs-string">&#x27;sleep&#x27;</span>, <span class="hljs-built_in">str</span>(period)])<br>    <span class="hljs-keyword">return</span> proc<br><br>start = time.time()<br>procs = []<br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>):<br>    proc = run_sleep(<span class="hljs-number">0.1</span>)<br>    procs.append(proc)<br><span class="hljs-keyword">for</span> proc <span class="hljs-keyword">in</span> procs:<br>    proc.communicate()<br>end = time.time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Finished in &#123;&#125; s&#x27;</span>.<span class="hljs-built_in">format</span>(end - start))<br></code></pre></td></tr></table></figure>
+<h2 id="用协程来并发的运行多个函数"><a href="#用协程来并发的运行多个函数" class="headerlink" title="用协程来并发的运行多个函数"></a>用协程来并发的运行多个函数</h2><p><em>暂略</em></p>
+<h1 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h1><h2 id="用-function-wraps-定义函数修饰器"><a href="#用-function-wraps-定义函数修饰器" class="headerlink" title="用 function.wraps 定义函数修饰器"></a>用 <code>function.wraps</code> 定义函数修饰器</h2><h2 id="用-datetima-模块来处理本地时间"><a href="#用-datetima-模块来处理本地时间" class="headerlink" title="用 datetima 模块来处理本地时间"></a>用 <code>datetima</code> 模块来处理本地时间</h2><h3 id="time-模块"><a href="#time-模块" class="headerlink" title="time 模块"></a>time 模块</h3><h3 id="datetime-模块"><a href="#datetime-模块" class="headerlink" title="datetime 模块"></a>datetime 模块</h3><h2 id="使用内置算法与数据结构"><a href="#使用内置算法与数据结构" class="headerlink" title="使用内置算法与数据结构"></a>使用内置算法与数据结构</h2><h3 id="双向队列"><a href="#双向队列" class="headerlink" title="双向队列"></a>双向队列</h3><p><code>collection</code> 模块中的 <code>deque</code> 类, 是一种双向队列. 从头部或者尾部插入或移除一个元素, 之需要消耗常数级别的时间.非常适合用来表示先进先出的队列.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">fifo = deque()<br>fifo.append(<span class="hljs-number">1</span>)<br>x = fifo.popleft()<br></code></pre></td></tr></table></figure>
+<p>list 从尾部插入或者移除元素,  需要O(1), 但是从头部插入或移除元素会消耗线性级别的时间.</p>
+<h3 id="有序字典"><a href="#有序字典" class="headerlink" title="有序字典"></a>有序字典</h3><p><code>collection</code> 模块中的 <code>OrderedDict</code> 类, 能够按照键的插入顺序, 来保留键值对在字典中的次序.</p>
+<h3 id="带有默认值的字典"><a href="#带有默认值的字典" class="headerlink" title="带有默认值的字典"></a>带有默认值的字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">stats = defaultdict(<span class="hljs-built_in">int</span>)<br>stats[my_counte<span class="hljs-string">r&#x27;] += 1</span><br></code></pre></td></tr></table></figure>
+<h3 id="堆队列"><a href="#堆队列" class="headerlink" title="堆队列"></a>堆队列</h3><p><code>heapd</code> 模块提供了 <code>heappush</code> <code>heappop</code> 和 <code>nsmallest</code> 等函数, 能在标准的list类型中创建堆结构.</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>list 使用 index 方法来搜索某个元素, 所耗的时间会与列表的长度呈线性比例.<br><code>bisect</code> 模块中的 <code>bisect_left</code> 等函数, 提供了高效的二分析半搜索算法, 可以在一系列排好顺序的元素之中搜寻某个值.</p>
+<h3 id="迭代器有关的工具"><a href="#迭代器有关的工具" class="headerlink" title="迭代器有关的工具"></a>迭代器有关的工具</h3><h2 id="在重视精确度的场景-应该使用-decimal"><a href="#在重视精确度的场景-应该使用-decimal" class="headerlink" title="在重视精确度的场景, 应该使用 decimal"></a>在重视精确度的场景, 应该使用 <code>decimal</code></h2><h1 id="协作开发"><a href="#协作开发" class="headerlink" title="协作开发"></a>协作开发</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>使用大写的变量名称表示常量<br><br>习惯用下划线表示无用的变量<br></p>
+</li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/note/">#note</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/11/22/Http-%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="Http 权威指南读书笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Http 权威指南读书笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/11/15/%E5%9B%BE%E8%A7%A3%E7%AE%97%E6%B3%95%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="图解算法读书笔记">
+                        <span class="hidden-mobile">图解算法读书笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      遇事不决,可问春风~
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/Afret1/image/master/img/202205201554336.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Afreto">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="时间戳转换工具              body {             font-family: &#39;Arial&#39;, sans-serif;             max-width: 800px;             margin: 20px auto;             padding: 20px;             background-col">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://example.com/ts.html">
+<meta property="og:site_name" content="Afreto&#39;s blog">
+<meta property="og:description" content="时间戳转换工具              body {             font-family: &#39;Arial&#39;, sans-serif;             max-width: 800px;             margin: 20px auto;             padding: 20px;             background-col">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-28T10:55:30.991Z">
+<meta property="article:modified_time" content="2024-11-28T10:55:30.991Z">
+<meta property="article:author" content="Afreto">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>page.title - Afreto&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Afreto~</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                
+                由我自横
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                不求甚解
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/cave">
+                
+                四时风物
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                
+                风之甬道
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                星火满天
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>时间戳转换工具</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FCFFE9;
+            color: #333333;
+        }
+
+        .container {
+            background-color: #F5F5F0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #FFF2CC;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #444444;
+            margin-bottom: 15px;
+        }
+
+        .timestamp {
+            font-size: 18px;
+            font-weight: bold;
+            color: #345995;
+            font-family: monospace;
+            min-width: 200px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #FCFFE9;
+        }
+
+        button {
+            background-color: #345995;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2A477A;
+        }
+
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #FDE0D9;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .result-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+
+        .timestamp-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .copy-button {
+            padding: 4px 8px;
+            font-size: 14px;
+            background-color: #3C8C7C;
+        }
+
+        .copy-button:hover {
+            background-color: #2F6F62;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 80px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -40px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        .tooltip .tooltiptext.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>当前时间戳</h2>
+            <div>
+                <div class="timestamp-container">
+                    <span class="label">秒级时间戳: </span>
+                    <span id="secondTimestamp" class="timestamp"></span>
+                    <div class="tooltip">
+                        <button onclick="copyTimestamp('secondTimestamp')" class="copy-button">复制</button>
+                        <span class="tooltiptext" id="secondTooltip">已复制!</span>
+                    </div>
+                </div>
+                <div class="timestamp-container">
+                    <span class="label">毫秒级时间戳: </span>
+                    <span id="millisecondTimestamp" class="timestamp"></span>
+                    <div class="tooltip">
+                        <button onclick="copyTimestamp('millisecondTimestamp')" class="copy-button">复制</button>
+                        <span class="tooltiptext" id="millisecondTooltip">已复制!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>时间戳转日期</h2>
+            <input type="number" id="timestamp" placeholder="请输入时间戳">
+            <select id="timestampType">
+                <option value="millisecond">毫秒</option>
+                <option value="second">秒</option>
+            </select>
+            <button onclick="timestampToDate()">转换为日期</button>
+            <div class="result">
+                <div class="result-container">
+                    <span id="dateResult" class="timestamp"></span>
+                    <div class="tooltip" id="dateResultContainer" style="display: none;">
+                        <button onclick="copyResult('dateResult')" class="copy-button">复制</button>
+                        <span class="tooltiptext" id="dateTooltip">已复制!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>日期转时间戳</h2>
+            <input type="datetime-local" id="datetime" step="1">
+            <button onclick="dateToTimestamp()">转换为时间戳</button>
+            <div class="result">
+                <div class="result-container">
+                    <span class="label">秒级时间戳: </span>
+                    <span id="secondsResult" class="timestamp"></span>
+                    <div class="tooltip">
+                        <button onclick="copyResult('secondsResult')" class="copy-button">复制</button>
+                        <span class="tooltiptext" id="secondsTooltip">已复制!</span>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <span class="label">毫秒级时间戳: </span>
+                    <span id="millisecondsResult" class="timestamp"></span>
+                    <div class="tooltip">
+                        <button onclick="copyResult('millisecondsResult')" class="copy-button">复制</button>
+                        <span class="tooltiptext" id="millisecondsTooltip">已复制!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 更新当前时间戳
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('secondTimestamp').textContent = Math.floor(now.getTime() / 1000);
+            document.getElementById('millisecondTimestamp').textContent = now.getTime();
+        }
+
+        // 复制时间戳功能
+        async function copyTimestamp(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            const tooltipId = elementId === 'secondTimestamp' ? 'secondTooltip' : 'millisecondTooltip';
+
+            try {
+                await navigator.clipboard.writeText(text);
+                showTooltip(tooltipId);
+            } catch (err) {
+                console.error('复制失败:', err);
+            }
+        }
+
+        // 显示提示框
+        function showTooltip(tooltipId) {
+            const tooltip = document.getElementById(tooltipId);
+            tooltip.classList.add('show');
+            setTimeout(() => {
+                tooltip.classList.remove('show');
+            }, 1500);
+        }
+
+        // 时间戳转日期
+        function timestampToDate() {
+            const timestamp = document.getElementById('timestamp').value;
+            const type = document.getElementById('timestampType').value;
+            let date;
+
+            if (type === 'second') {
+                date = new Date(timestamp * 1000);
+            } else {
+                date = new Date(parseInt(timestamp));
+            }
+
+            const formatted = formatDate(date);
+            document.getElementById('dateResult').textContent = formatted;
+            document.getElementById('dateResultContainer').style.display = 'inline-block';
+        }
+
+        // 日期转时间戳
+        function dateToTimestamp() {
+            const datetimeStr = document.getElementById('datetime').value;
+            const date = new Date(datetimeStr);
+            const milliseconds = date.getTime();
+            const seconds = Math.floor(milliseconds / 1000);
+
+            document.getElementById('secondsResult').textContent = seconds;
+            document.getElementById('millisecondsResult').textContent = milliseconds;
+        }
+
+        // 复制结果
+        async function copyResult(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            let tooltipId;
+
+            switch (elementId) {
+                case 'dateResult':
+                    tooltipId = 'dateTooltip';
+                    break;
+                case 'secondsResult':
+                    tooltipId = 'secondsTooltip';
+                    break;
+                case 'millisecondsResult':
+                    tooltipId = 'millisecondsTooltip';
+                    break;
+            }
+
+            try {
+                await navigator.clipboard.writeText(text);
+                showTooltip(tooltipId);
+            } catch (err) {
+                console.error('复制失败:', err);
+            }
+        }
+
+        // 格式化日期
+        function formatDate(date) {
+            const pad = (num) => String(num).padStart(2, '0');
+
+            return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ` +
+                   `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+        }
+
+        // 每秒更新时间戳
+        updateTimestamp();
+        setInterval(updateTimestamp, 1000);
+
+        // 设置datetime-local输入框的默认值为当前时间
+        const now = new Date();
+        const nowStr = now.toISOString().slice(0, 19);
+        document.getElementById('datetime').value = nowStr;
+    </script>
+</body>
+</html>
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      遇事不决,可问春风~
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

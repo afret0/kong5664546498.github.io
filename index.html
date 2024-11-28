@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/Afret1/image/master/img/202205201554336.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Afreto">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Afreto&#39;s blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Afreto&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Afreto">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Afreto&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Afreto~</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                
+                由我自横
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                不求甚解
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/cave">
+                
+                四时风物
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                
+                风之甬道
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                星火满天
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/Afret1/image/master/img/202204051301766.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="歇于雁荡山大龙湫,及三更梦中,星火满天,喜不成寐,赤足跳入草莽中~"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/06/02/redis-design-and-implementation/" target="_self">
+          <img src="/img/example.jpg" srcset="/img/loading.gif" lazyload alt="redis_design_and_implementation">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2024/06/02/redis-design-and-implementation/" target="_self">
+          redis_design_and_implementation
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2024/06/02/redis-design-and-implementation/" target="_self">
+        <div>
+          
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-02 16:52" pubdate>
+              2024-06-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/04/14/%E8%A7%82%E5%BD%B1%E6%97%A5%E5%BF%97/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202304141023305.png" srcset="/img/loading.gif" lazyload alt="观影日志">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/04/14/%E8%A7%82%E5%BD%B1%E6%97%A5%E5%BF%97/" target="_self">
+          观影日志
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2023/04/14/%E8%A7%82%E5%BD%B1%E6%97%A5%E5%BF%97/" target="_self">
+        <div>
+          
+          [ ] 宇宙探索编辑部 [ ] 徒手攀岩 [ ] 流人 [ ] 为了全人类看了第一集, 感觉不是很好看, 先弃了  [x] 双狼 2024&#x2F;10&#x2F;09 [x] 僵尸世界大战 [x] 三笑才子佳人 [x] 哥斯拉大战金刚 2024&#x2F;04&#x2F;27 [x] ISLAND [x] 大雨 2024&#x2F;03&#x2F;03 1:00 [x] 边境杀手2 2024&amp;
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-04-14 10:17" pubdate>
+              2023-04-14
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/27/%E9%94%85%E9%9C%9E%E5%AE%A2%E6%B8%B8%E8%AE%B0/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202207180006007.jpeg" srcset="/img/loading.gif" lazyload alt="锅霞客游记">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/27/%E9%94%85%E9%9C%9E%E5%AE%A2%E6%B8%B8%E8%AE%B0/" target="_self">
+          锅霞客游记
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/06/27/%E9%94%85%E9%9C%9E%E5%AE%A2%E6%B8%B8%E8%AE%B0/" target="_self">
+        <div>
+          
+          江湖, 不应该是利益, 不应该是人情事故~ 它应该是少年人的梦~  去他妈的油盐酱醋十三香~ 我还是想去看看那些没去过的地方~ 可能, 我会直接撞入怒江~ 于是, 2022年07月12日 定了一辆凯越525x, 目前等车中~ 2022年09月05号 启程从青岛摩旅回东北~2023年03月 又见到汤圆了~2023年04月07日更回到上海继续上班ing~ 努力控制灵魂对自由的渴望~ 标一个人生愿望清单
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-27 19:30" pubdate>
+              2022-06-27
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/03/%E9%81%93%E6%B3%95%E8%87%AA%E7%84%B6-%E6%98%93%E7%BB%8F%E7%9E%A7%E4%B8%80%E7%9E%A7/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202206031354749.png" srcset="/img/loading.gif" lazyload alt="道法自然|易经瞧一瞧~">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/03/%E9%81%93%E6%B3%95%E8%87%AA%E7%84%B6-%E6%98%93%E7%BB%8F%E7%9E%A7%E4%B8%80%E7%9E%A7/" target="_self">
+          道法自然|易经瞧一瞧~
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/06/03/%E9%81%93%E6%B3%95%E8%87%AA%E7%84%B6-%E6%98%93%E7%BB%8F%E7%9E%A7%E4%B8%80%E7%9E%A7/" target="_self">
+        <div>
+          
+          易经的特性  模糊性  话不说明白 灵活性 正话反说, 都是你的了 空白性 打哪指哪儿~  子曰: 提溜算卦~三个铜板, 正面为 3 反面为 2  阳九阴六 时, 位, 性质 来代表 爻     为什么初九不叫九一 事情开始的时候时间比空间重要  乾坤  易之门 错卦 两种完全相反的卦, 在易经里面叫做错卦  六十四卦分为三类:   纯阳 —- 乾卦 纯阴 —- 坤卦 有阴有阳 —-
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-03 13:55" pubdate>
+              2022-06-03
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/27/ffmpeg/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202205272350347.png" srcset="/img/loading.gif" lazyload alt="ffmpeg">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/27/ffmpeg/" target="_self">
+          ffmpeg
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/27/ffmpeg/" target="_self">
+        <div>
+          
+          批量转换视频格式find .&#x2F; -name &#39;*.mov&#39; -exec sh -c &#39;ffmpeg -i &quot;$0&quot; &quot;$&amp;#123;0%%.mov&amp;#125;.mp4&quot;&#39; &amp;#123;&amp;#125; \; 合并音视频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -stri
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-27 23:48" pubdate>
+              2022-05-27
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/24/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0%E8%A1%A8%E6%83%85%E5%8C%85/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202205242057066.png" srcset="/img/loading.gif" lazyload alt="蜡笔小新表情包">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/24/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0%E8%A1%A8%E6%83%85%E5%8C%85/" target="_self">
+          蜡笔小新表情包
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/24/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0%E8%A1%A8%E6%83%85%E5%8C%85/" target="_self">
+        <div>
+          
+          蜡笔小新表情包~ 嘻嘻嘻~ 零用钱绝对不要留到第二天 我的零用钱都拿去买冰玩具还有动感超人花光了 我去上学了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-24 20:56" pubdate>
+              2022-05-24
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/05/%E7%AC%91%E6%AD%BB%E6%88%91%E4%BA%86/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202205052124834.png" srcset="/img/loading.gif" lazyload alt="笑死我了...">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/05/%E7%AC%91%E6%AD%BB%E6%88%91%E4%BA%86/" target="_self">
+          笑死我了...
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/05/%E7%AC%91%E6%AD%BB%E6%88%91%E4%BA%86/" target="_self">
+        <div>
+          
+          想你了我拉了一条屎, 很长, 但是没有我对你的思念长~ 那些神一样的歇后语武大郎卖刺猬 – 人怂货扎手 从湖南到河南 – 难上加难 发面馒头画眼影 – 楞装下午茶小蛋糕 肚脐眼放屁 – 你是怎么想(响)的? 屁股插辣椒 – 眼热 我佛不度穷逼, 毕竟我听大悲咒都没 vip 武则天死老公 – 失去理智 鞭炮两头点 – 响到一起了 玉米地里种水稻 – 杂种 九台压路机  坏一台 – 八个压路 36除以
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-05 19:56" pubdate>
+              2022-05-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/05/youtube-dl-%E4%BD%BF%E7%94%A8aria2c-%E4%B8%8B%E8%BD%BD/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202205051539964.jpg" srcset="/img/loading.gif" lazyload alt="youtube-dl 使用aria2c 下载">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/05/youtube-dl-%E4%BD%BF%E7%94%A8aria2c-%E4%B8%8B%E8%BD%BD/" target="_self">
+          youtube-dl 使用aria2c 下载
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/05/youtube-dl-%E4%BD%BF%E7%94%A8aria2c-%E4%B8%8B%E8%BD%BD/" target="_self">
+        <div>
+          
+          最近入了个树莓派, 搭了 emby  在看春姐讲的西游, youtube 刷的视频多, 老是找不到记录, 麻烦的不行… 不如就下载下来慢慢看~ 使用 youtube-dl + aria2c 插件下载 1234youtube-dl https:&#x2F;&#x2F;www.youtube.com&#x2F;watch\?v\&#x3D;YxkTKb12QZQ\&amp;list\&#x3D;PLHOL1w6t2NFPYUwYl3vr2coMolz
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-05 15:34" pubdate>
+              2022-05-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/25/%E5%85%B3%E4%BA%8E%E6%88%91%E6%90%9E%E4%BA%86%E4%B8%AA%E6%A0%91%E8%8E%93%E6%B4%BE/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202204251955588.png" srcset="/img/loading.gif" lazyload alt="关于我搞了个树莓派">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/25/%E5%85%B3%E4%BA%8E%E6%88%91%E6%90%9E%E4%BA%86%E4%B8%AA%E6%A0%91%E8%8E%93%E6%B4%BE/" target="_self">
+          关于我搞了个树莓派
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/04/25/%E5%85%B3%E4%BA%8E%E6%88%91%E6%90%9E%E4%BA%86%E4%B8%AA%E6%A0%91%E8%8E%93%E6%B4%BE/" target="_self">
+        <div>
+          
+          折腾, 就是爱折腾~ 自动连接 wifi搞个脚本, 自动检测是否已经连接 wifi, 如果未连接, 则自动重启网络 保存到  &#x2F;home, 文件名为 autowifi.py ,即 &#x2F;home&#x2F;autowifi.py 12345678910111213141516#!&#x2F;usr&#x2F;bin&#x2F;pythonimport os, time def log(txt):    with open(f&quot;&#x2F;d
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-25 19:55" pubdate>
+              2022-04-25
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/cave/">#cave</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/03/24/final-cut-handbook/" target="_self">
+          <img src="https://raw.githubusercontent.com/Afret1/image/master/img/202203241523784.png" srcset="/img/loading.gif" lazyload alt="final_cut_pro_handbook">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/03/24/final-cut-handbook/" target="_self">
+          final_cut_pro_handbook
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/03/24/final-cut-handbook/" target="_self">
+        <div>
+          
+          剪辑素材i+o  设置开头和结尾 e 添加素材到时间线 q  添加素材到右侧    shift+q左侧 w     切割并插入 d    替换右侧时间线    shift+d左侧 b直接切割 opt+&amp;#125;    删除右侧 shift+z时间线自适应 ctrl+d设置时间段长度 , .    移动帧 shift +    移动10帧 cmd+opt    修改吸附帧 opt+w    添加空
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-24 16:05" pubdate>
+              2022-03-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/note/">#note</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      遇事不决,可问春风~
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
